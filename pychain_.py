@@ -1,9 +1,5 @@
 # PyChain Ledger
-################################################################################
-# You’ll make the following updates to the provided Python file for this
-# Challenge, which already contains the basic `PyChain` ledger structure that
-# you created throughout the module:
-
+---
 # Step 1: Create a Record Data Class
 # * Create a new data class named `Record`. This class will serve as the
 # blueprint for the financial transaction records that the blocks of the ledger
@@ -22,6 +18,7 @@
 # * Test your complete `PyChain` ledger.
 
 ################################################################################
+
 # Imports
 import streamlit as st
 from dataclasses import dataclass
@@ -31,6 +28,7 @@ import pandas as pd
 import hashlib
 
 ################################################################################
+
 # Step 1:
 # Create a Record Data Class
 
