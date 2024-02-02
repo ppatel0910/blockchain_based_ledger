@@ -35,8 +35,6 @@ import hashlib
 # Define a new Python data class named `Record`. Give this new class a
 # formalized data structure that consists of the `sender`, `receiver`, and
 # `amount` attributes. 
-# Note that you’ll use this new `Record` class as the data type of your `record` attribute
-# in the next section.
 
 @dataclass
 class Record:
@@ -50,17 +48,12 @@ class Record:
 
 # Rename the `data` attribute in your `Block` class to `record`, and then set
 # it to use an instance of the new `Record` class that you created in the
-# previous section. To do so, complete the following steps:
-# 1. In the `Block` class, rename the `data` attribute to `record`.
-# 2. Set the data type of the `record` attribute to `Record`.
-
+# previous section.
 
 @dataclass
 class Block:
 
-    # @TODO
-    # Rename the `data` attribute to `record`, and set the data type to `Record`
-    data: Any
+    record: Record
 
     creator_id: int
     prev_hash: str = "0"
@@ -129,7 +122,6 @@ class PyChain:
 # Streamlit Code
 
 # Adds the cache decorator for Streamlit
-
 
 @st.cache(allow_output_mutation=True)
 def setup():
