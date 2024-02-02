@@ -1,5 +1,5 @@
 # PyChain Ledger
-################################################################################
+###############################################################################
 # Step 1: Create a Record Data Class
 # * Create a new data class named `Record`. This class will serve as the
 # blueprint for the financial transaction records that the blocks of the ledger
@@ -17,7 +17,7 @@
 # Step 4: Test the PyChain Ledger by Storing Records
 # * Test your complete `PyChain` ledger.
 
-################################################################################
+###############################################################################
 
 # Imports
 import streamlit as st
@@ -27,7 +27,7 @@ import datetime as datetime
 import pandas as pd
 import hashlib
 
-################################################################################
+###############################################################################
 
 # Step 1:
 # Create a Record Data Class
@@ -42,7 +42,7 @@ class Record:
     receiver: str
     amount: float
 
-################################################################################
+###############################################################################
 # Step 2:
 # Modify the Existing Block Data Class to Store Record Data
 
@@ -118,7 +118,7 @@ class PyChain:
         print("Blockchain is Valid")
         return True
 
-################################################################################
+###############################################################################
 # Streamlit Code
 
 # Adds the cache decorator for Streamlit
@@ -134,7 +134,7 @@ st.markdown("## Store a Transaction Record in the PyChain")
 
 pychain = setup()
 
-################################################################################
+###############################################################################
 # Step 3:
 # Add Relevant User Inputs to the Streamlit Interface
 
@@ -166,7 +166,7 @@ if st.button("Add Block"):
     pychain.add_block(new_block)
     st.balloons()
 
-################################################################################
+###############################################################################
 # Streamlit Code 
 
 st.markdown("## The PyChain Ledger")
@@ -187,7 +187,7 @@ st.sidebar.write(selected_block)
 if st.button("Validate Chain"):
     st.write(pychain.is_valid())
 
-################################################################################
+###############################################################################
 # Step 4:
 # Test the PyChain Ledger by Storing Records
 
