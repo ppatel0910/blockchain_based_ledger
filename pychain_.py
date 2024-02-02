@@ -141,48 +141,33 @@ pychain = setup()
 # Code additional input areas for the user interface of your Streamlit
 # application. Create these input areas to capture the sender, receiver, and
 # amount for each transaction that you’ll store in the `Block` record.
-# To do so, complete the following steps:
-# 1. Delete the `input_data` variable from the Streamlit interface.
-# 2. Add an input area where you can get a value for `sender` from the user.
-# 3. Add an input area where you can get a value for `receiver` from the user.
-# 4. Add an input area where you can get a value for `amount` from the user.
-# 5. As part of the Add Block button functionality, update `new_block` so that `Block` consists of an attribute named `record`, which is set equal to a `Record` that contains the `sender`, `receiver`, and `amount` values. The updated `Block`should also include the attributes for `creator_id` and `prev_hash`.
 
-# @TODO:
-# Delete the `input_data` variable from the Streamlit interface.
-input_data = st.text_input("Block Data")
 
-# @TODO:
 # Add an input area where you can get a value for `sender` from the user.
-# YOUR CODE HERE
+input_sender = st.text_input("sender")
 
-# @TODO:
 # Add an input area where you can get a value for `receiver` from the user.
-# YOUR CODE HERE
+input_receiver = st.text_input("receiver")
 
-# @TODO:
 # Add an input area where you can get a value for `amount` from the user.
-# YOUR CODE HERE
+input_amount = st.text_input("amount")
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
     prev_block_hash = prev_block.hash_block()
 
-    # @TODO
-    # Update `new_block` so that `Block` consists of an attribute named `record`
-    # which is set equal to a `Record` that contains the `sender`, `receiver`,
-    # and `amount` values
+    
     new_block = Block(
-        data=input_data,
-        creator_id=42,
-        prev_hash=prev_block_hash
+        record = Record,
+        creator_id = 42,
+        prev_hash = prev_block_hash
     )
 
     pychain.add_block(new_block)
     st.balloons()
 
 ################################################################################
-# Streamlit Code (continues)
+# Streamlit Code 
 
 st.markdown("## The PyChain Ledger")
 
@@ -205,11 +190,6 @@ if st.button("Validate Chain"):
 ################################################################################
 # Step 4:
 # Test the PyChain Ledger by Storing Records
-
-# Test your complete `PyChain` ledger and user interface by running your
-# Streamlit application and storing some mined blocks in your `PyChain` ledger.
-# Then test the blockchain validation process by using your `PyChain` ledger.
-# To do so, complete the following steps:
 
 # 1. In the terminal, navigate to the project folder where you've coded the
 #  Challenge.
